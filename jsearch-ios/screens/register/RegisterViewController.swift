@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class RegisterViewController: UIViewController {
     
     private let registerView: RegisterView
     private let viewModel: RegisterViewModel
+    
+    private let bag = DisposeBag()
     
     init(view: RegisterView, viewModel: RegisterViewModel) {
         self.registerView = view
@@ -28,6 +32,14 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .darkGray
+        registerView.viewDidLoad()
+        configureOnClose()
+    }
+    
+    private func configureOnClose() {
+        registerView
+            .closeButton.rx.tap
+            .bind(to: viewModel.onClose)
+            .disposed(by: bag)
     }
 }

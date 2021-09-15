@@ -11,12 +11,21 @@ import RxCocoa
 
 public class JobSearchViewModel {
     
-    enum TableViewAction {
+   private enum TableViewAction {
         case startOver
         case nextPage
     }
     
     private let bag = DisposeBag()
+    
+    private lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter
+    }()
+    
+    // input
     
     let login = PublishSubject<Void>()
     let register = PublishSubject<Void>()
@@ -24,21 +33,21 @@ public class JobSearchViewModel {
     let loadMore = PublishSubject<Void>()
     let refresh = PublishSubject<Void>()
     
-    var isActive: Observable<Bool> {
+    // output
+    var isActive: Driver<Bool> {
         return _isActive
-            .asObservable()
             .distinctUntilChanged()
+            .asDriver(onErrorJustReturn: false)
     }
     private let _isActive = PublishSubject<Bool>()
     
-    var error: Observable<Error> {
+    var error: Driver<Error?> {
         _error
-            .asObservable()
-            .observe(on: scheduler)
+            .asDriver(onErrorJustReturn: nil)
     }
-    private let _error = PublishSubject<Error>()
+    private let _error = PublishSubject<Error?>()
     
-    var results: Observable<[TVSectionViewModel]> {
+    var results: Driver<[TVSectionViewModel]> {
         data
             .map { [weak self] arr in
                 arr.map {
@@ -46,7 +55,9 @@ public class JobSearchViewModel {
                     return TVSectionViewModel.from(date, data: $0.data)
                 }
             }
+            .asDriver(onErrorJustReturn: [])
     }
+    
     
     private let data = BehaviorRelay<[FlexJobResult]>(value: [])
     
@@ -54,7 +65,7 @@ public class JobSearchViewModel {
     
     private let scheduler: SchedulerType
     
-    init(scheduler: SchedulerType = MainScheduler.instance,
+    init(scheduler: SchedulerType = ConcurrentDispatchQueueScheduler(qos: .userInteractive),
          flexJobRepository: FlexJobRepository = FlexJobDefaultRepository()) {
         
         self.flexJobRepository = flexJobRepository
@@ -63,6 +74,7 @@ public class JobSearchViewModel {
         
         Observable.merge(loadMore.map { TableViewAction.nextPage }
                          ,refresh.map { TableViewAction.startOver })
+            .observe(on: scheduler)
             .debounce(.milliseconds(100), scheduler: scheduler)
             .do(onNext: { [weak self] _ in
                 self?._isActive.onNext(true)
@@ -109,13 +121,6 @@ public class JobSearchViewModel {
             }
             .disposed(by: bag)
     }
-    
-    lazy var dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter
-    }()
     
     func nextPagingKey() -> String {
         guard let lastKey = data.value.last?.key else {

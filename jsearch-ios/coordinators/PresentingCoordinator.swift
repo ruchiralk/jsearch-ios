@@ -26,7 +26,7 @@ class PresentingCoordinator: Coordinator {
         presentingViewController.present(viewController, animated: animated)
     }
     
-    func finish(_ animated: Bool) {
+    override func finish(_ animated: Bool) {
         presentingViewController.dismiss(animated: animated)
         didFinish?(self)
     }

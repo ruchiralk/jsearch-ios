@@ -6,11 +6,17 @@
 //
 
 import Foundation
+import RxSwift
 
 class LoginCoordinator: PresentingCoordinator {
     
     override func start() {
         let viewModel = LoginViewModel()
+        
+        viewModel.onClose.subscribe { [weak self] _ in
+            self?.finish(true)
+        }.disposed(by: bag)
+
         let view = LoginView()
         let loginViewController = LoginViewController(view: view, viewModel: viewModel)
         present(viewController: loginViewController, animated: true)

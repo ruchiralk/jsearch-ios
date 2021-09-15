@@ -22,7 +22,7 @@ class NavigationCoordinator: Coordinator {
     }
     
     
-    func finish(_ animated: Bool) {
+    override func finish(_ animated: Bool) {
         if let viewController = initialViewController {
             navigationController.popToViewController(viewController, animated: animated)
         } else {

@@ -6,7 +6,10 @@
 //
 
 import Foundation
+import RxSwift
 
 class LoginViewModel {
+    
+    let onClose = PublishSubject<Void>()
     
 }

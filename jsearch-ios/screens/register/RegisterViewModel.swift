@@ -6,7 +6,10 @@
 //
 
 import Foundation
+import RxSwift
 
 class RegisterViewModel {
+    
+    let onClose = PublishSubject<Void>()
     
 }

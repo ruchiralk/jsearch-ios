@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class LoginViewController: UIViewController {
     
     private let loginView: LoginView
     private let viewModel: LoginViewModel
+    
+    private let bag = DisposeBag()
     
     init(view: LoginView, viewModel: LoginViewModel) {
         self.loginView = view
@@ -28,7 +32,14 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .green
+        loginView.viewDidLoad()
+        configureOnClose()
     }
     
+    private func configureOnClose() {
+        loginView
+            .closeButton.rx.tap
+            .bind(to: viewModel.onClose)
+            .disposed(by: bag)
+    }
 }

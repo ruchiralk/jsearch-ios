@@ -18,7 +18,7 @@ class Coordinator: NSObject {
     
     func start() {}
     
-    func finish() {}
+    func finish(_ animated: Bool) {}
     
     func pushCoordinator(_ coordinator: Coordinator) {
         // Install Handler

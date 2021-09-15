@@ -74,8 +74,6 @@ class JobSearchViewController: UIViewController {
     
     private func showProgressIndicatorWhenActive() {
         viewModel.isActive
-            .asDriver(onErrorJustReturn: false)
-            .distinctUntilChanged()
             .drive { [weak self] active in
                 if active {
                     let activityView = UIActivityIndicatorView(style: .large)
@@ -90,15 +88,15 @@ class JobSearchViewController: UIViewController {
     
     private func showErrors() {
         viewModel.error
-            .subscribe { event in
-                guard let error = event.element else {
+            .drive(onNext: { error in
+                guard let error = error else {
                     return
                 }
                 NotificationBanner(title: NSLocalizedString("Errpr", comment: "error"),
                                    subtitle: error.localizedDescription,
                                    style: .danger)
                     .show()
-            }
+            })
             .disposed(by: bag)
     }
 }
@@ -141,12 +139,14 @@ extension JobSearchViewController: UITableViewDelegate {
     private func bindRefreshControl() {
         viewModel.isActive
             .skip(1)
+            .asObservable()
             .bind(to: jobSearchView.tableView.refreshControl!.rx.isRefreshing)
             .disposed(by: bag)
     }
     
     private func bindTableViewDataSource() {
         viewModel.results
+            .asObservable()
             .bind(to: jobSearchView.tableView.rx.items(dataSource: self.datasource))
             .disposed(by: bag)
     }

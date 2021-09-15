@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		49470CBFE94CF19CB8B2D811 /* Pods_jsearch_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1865F2A7A2C8D3D016FFEC /* Pods_jsearch_iosTests.framework */; };
+		BA02BC5926F2463500FCA184 /* JobSearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02BC5826F2463500FCA184 /* JobSearchViewModelTests.swift */; };
 		BA597D7026F0DFDA00CB1E2E /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA597D6F26F0DFDA00CB1E2E /* APIError.swift */; };
 		BA597D7226F0E31100CB1E2E /* FlexJobsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA597D7126F0E31100CB1E2E /* FlexJobsDataSource.swift */; };
 		BA597D7426F0E36200CB1E2E /* FlexJobsRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA597D7326F0E36200CB1E2E /* FlexJobsRemoteDataSource.swift */; };
@@ -35,7 +36,6 @@
 		BAA9257F26EC9602008D7374 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA9257E26EC9602008D7374 /* SceneDelegate.swift */; };
 		BAA9258626EC9603008D7374 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA9258526EC9603008D7374 /* Assets.xcassets */; };
 		BAA9258926EC9603008D7374 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAA9258726EC9603008D7374 /* LaunchScreen.storyboard */; };
-		BAA9259426EC9603008D7374 /* jsearch_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA9259326EC9603008D7374 /* jsearch_iosTests.swift */; };
 		BAA9259F26EC9603008D7374 /* jsearch_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA9259E26EC9603008D7374 /* jsearch_iosUITests.swift */; };
 		BADA2C4026EDD7E00024D36D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA2C3F26EDD7E00024D36D /* Coordinator.swift */; };
 		BADA2C4226EDDA300024D36D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA2C4126EDDA300024D36D /* AppCoordinator.swift */; };
@@ -82,6 +82,7 @@
 		8D16F18130439C92ABDF9344 /* Pods-jsearch-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jsearch-ios.release.xcconfig"; path = "Target Support Files/Pods-jsearch-ios/Pods-jsearch-ios.release.xcconfig"; sourceTree = "<group>"; };
 		8D1865F2A7A2C8D3D016FFEC /* Pods_jsearch_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jsearch_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9488829E13995F1D8F4E7FF5 /* Pods-jsearch-ios-jsearch-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jsearch-ios-jsearch-iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-jsearch-ios-jsearch-iosUITests/Pods-jsearch-ios-jsearch-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BA02BC5826F2463500FCA184 /* JobSearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSearchViewModelTests.swift; sourceTree = "<group>"; };
 		BA597D6F26F0DFDA00CB1E2E /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		BA597D7126F0E31100CB1E2E /* FlexJobsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexJobsDataSource.swift; sourceTree = "<group>"; };
 		BA597D7326F0E36200CB1E2E /* FlexJobsRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexJobsRemoteDataSource.swift; sourceTree = "<group>"; };
@@ -112,7 +113,6 @@
 		BAA9258826EC9603008D7374 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAA9258A26EC9603008D7374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAA9258F26EC9603008D7374 /* jsearch-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "jsearch-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BAA9259326EC9603008D7374 /* jsearch_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsearch_iosTests.swift; sourceTree = "<group>"; };
 		BAA9259526EC9603008D7374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAA9259A26EC9603008D7374 /* jsearch-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "jsearch-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAA9259E26EC9603008D7374 /* jsearch_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsearch_iosUITests.swift; sourceTree = "<group>"; };
@@ -264,8 +264,8 @@
 		BAA9259226EC9603008D7374 /* jsearch-iosTests */ = {
 			isa = PBXGroup;
 			children = (
-				BAA9259326EC9603008D7374 /* jsearch_iosTests.swift */,
 				BAA9259526EC9603008D7374 /* Info.plist */,
+				BA02BC5826F2463500FCA184 /* JobSearchViewModelTests.swift */,
 			);
 			path = "jsearch-iosTests";
 			sourceTree = "<group>";
@@ -682,7 +682,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAA9259426EC9603008D7374 /* jsearch_iosTests.swift in Sources */,
+				BA02BC5926F2463500FCA184 /* JobSearchViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
