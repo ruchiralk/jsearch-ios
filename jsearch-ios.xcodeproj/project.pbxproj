@@ -14,6 +14,7 @@
 		BA02BC5F26F283E500FCA184 /* Date+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02BC5E26F283E500FCA184 /* Date+mock.swift */; };
 		BA02BC6126F2A91900FCA184 /* TemperAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02BC6026F2A91900FCA184 /* TemperAPIService.swift */; };
 		BA02BC6326F2AAB700FCA184 /* UITableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02BC6226F2AAB700FCA184 /* UITableViewHeaderFooterView.swift */; };
+		BA02BC6526F2ADDA00FCA184 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BA02BC6426F2ADDA00FCA184 /* README.md */; };
 		BA597D7026F0DFDA00CB1E2E /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA597D6F26F0DFDA00CB1E2E /* APIError.swift */; };
 		BA597D7226F0E31100CB1E2E /* FlexJobsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA597D7126F0E31100CB1E2E /* FlexJobsDataSource.swift */; };
 		BA597D7426F0E36200CB1E2E /* FlexJobsRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA597D7326F0E36200CB1E2E /* FlexJobsRemoteDataSource.swift */; };
@@ -84,6 +85,7 @@
 		BA02BC5E26F283E500FCA184 /* Date+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+mock.swift"; sourceTree = "<group>"; };
 		BA02BC6026F2A91900FCA184 /* TemperAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperAPIService.swift; sourceTree = "<group>"; };
 		BA02BC6226F2AAB700FCA184 /* UITableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		BA02BC6426F2ADDA00FCA184 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		BA597D6F26F0DFDA00CB1E2E /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		BA597D7126F0E31100CB1E2E /* FlexJobsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexJobsDataSource.swift; sourceTree = "<group>"; };
 		BA597D7326F0E36200CB1E2E /* FlexJobsRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexJobsRemoteDataSource.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 		BAA9257B26EC9602008D7374 /* jsearch-ios */ = {
 			isa = PBXGroup;
 			children = (
+				BA02BC6426F2ADDA00FCA184 /* README.md */,
 				BAA9258A26EC9603008D7374 /* Info.plist */,
 				BADA2C4A26EFD4220024D36D /* common */,
 				BADA2C4526EE086E0024D36D /* application */,
@@ -446,6 +449,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA02BC6526F2ADDA00FCA184 /* README.md in Resources */,
 				BAA9258926EC9603008D7374 /* LaunchScreen.storyboard in Resources */,
 				BAA9258626EC9603008D7374 /* Assets.xcassets in Resources */,
 			);
