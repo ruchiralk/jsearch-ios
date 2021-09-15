@@ -10,6 +10,7 @@ target 'jsearch-ios' do
   pod 'Kingfisher', '~> 6.3.0'
   pod 'RxSwift', '6.2.0'
   pod 'RxCocoa', '6.2.0'
+  pod 'RxDataSources'
   pod 'SnapKit', '~> 5.0.0'
   pod 'CocoaLumberjack/Swift'
   pod 'NotificationBannerSwift', '~> 3.0.0'
