@@ -15,20 +15,26 @@ struct TVSectionViewModel {
     private static var formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.dateFormat = "EEEE d MMMM"
+      
         return formatter
     }()
     
-    static func from(_ date: Date?, data: [FlexJob]) -> TVSectionViewModel {
+    static func from(_ date: String?, data: [FlexJob]) -> TVSectionViewModel {
         let title = formatDate(date)
         return TVSectionViewModel(title: title, items: data.map {TVItemViewModel.from($0) })
     }
     
-    static func formatDate(_ date: Date?) -> String {
-        guard let date = date else {
+    static func formatDate(_ dateStr: String?) -> String {
+        guard let dateStr = dateStr else {
             return ""
         }
         
+        formatter.dateFormat = JobSearchViewModel.serverDateFormat
+        guard let date = formatter.date(from: dateStr) else {
+            return ""
+        }
+        
+        formatter.dateFormat = "EEEE d MMMM"
         return formatter.string(from: date)
     }
 }

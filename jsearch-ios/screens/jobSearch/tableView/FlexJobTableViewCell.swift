@@ -20,6 +20,7 @@ class FlexJobTableViewCell: UITableViewCell {
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 4
         imageView.contentMode = .scaleAspectFill
+        imageView.backgroundColor = UIColor.systemGray3
         return imageView
     }()
     
@@ -43,7 +44,7 @@ class FlexJobTableViewCell: UITableViewCell {
     
     lazy var durationLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15.0)
+        label.font = UIFont.systemFont(ofSize: 14.0)
         return label
     }()
     
@@ -107,6 +108,7 @@ class FlexJobTableViewCell: UITableViewCell {
             heroImageView.image = nil
             return
         }
-        heroImageView.kf.setImage(with: URL(string: url))
+        heroImageView.kf
+            .setImage(with: URL(string: url))
     }
 }

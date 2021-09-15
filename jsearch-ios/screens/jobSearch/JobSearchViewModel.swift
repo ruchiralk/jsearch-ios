@@ -11,6 +11,8 @@ import RxCocoa
 
 public class JobSearchViewModel {
     
+    static let serverDateFormat = "yyyy-MM-dd"
+    
    private enum TableViewAction {
         case startOver
         case nextPage
@@ -21,7 +23,7 @@ public class JobSearchViewModel {
     private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.dateFormat = JobSearchViewModel.serverDateFormat
         return formatter
     }()
     
@@ -49,10 +51,10 @@ public class JobSearchViewModel {
     
     var results: Driver<[TVSectionViewModel]> {
         data
-            .map { [weak self] arr in
+            .skip(1)
+            .map { arr in
                 arr.map {
-                    let date = self?.dateFormatter.date(from: $0.key)
-                    return TVSectionViewModel.from(date, data: $0.data)
+                    return TVSectionViewModel.from($0.key, data: $0.data)
                 }
             }
             .asDriver(onErrorJustReturn: [])
@@ -132,6 +134,6 @@ public class JobSearchViewModel {
     }
     
     func startingPagingKey() -> String {
-        dateFormatter.string(from: Date())
+        dateFormatter.string(from: Date.current)
     }
 }
