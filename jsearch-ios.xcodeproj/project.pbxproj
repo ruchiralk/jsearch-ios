@@ -111,8 +111,6 @@
 		BAA9258A26EC9603008D7374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAA9258F26EC9603008D7374 /* jsearch-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "jsearch-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAA9259526EC9603008D7374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BAA9259E26EC9603008D7374 /* jsearch_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsearch_iosUITests.swift; sourceTree = "<group>"; };
-		BAA925A026EC9603008D7374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BADA2C3F26EDD7E00024D36D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		BADA2C4126EDDA300024D36D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		BADA2C4D26EFD8FA0024D36D /* JobSearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSearchCoordinator.swift; sourceTree = "<group>"; };
@@ -217,7 +215,6 @@
 			children = (
 				BAA9257B26EC9602008D7374 /* jsearch-ios */,
 				BAA9259226EC9603008D7374 /* jsearch-iosTests */,
-				BAA9259D26EC9603008D7374 /* jsearch-iosUITests */,
 				BAA9257A26EC9602008D7374 /* Products */,
 				51FC5E953E0A07EC48853C4D /* Pods */,
 				9D66DEA74353D4B021B4BF77 /* Frameworks */,
@@ -257,15 +254,6 @@
 				BA02BC5826F2463500FCA184 /* JobSearchViewModelTests.swift */,
 			);
 			path = "jsearch-iosTests";
-			sourceTree = "<group>";
-		};
-		BAA9259D26EC9603008D7374 /* jsearch-iosUITests */ = {
-			isa = PBXGroup;
-			children = (
-				BAA9259E26EC9603008D7374 /* jsearch_iosUITests.swift */,
-				BAA925A026EC9603008D7374 /* Info.plist */,
-			);
-			path = "jsearch-iosUITests";
 			sourceTree = "<group>";
 		};
 		BADA2C4526EE086E0024D36D /* application */ = {

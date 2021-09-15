@@ -22,8 +22,4 @@ target 'jsearch-ios' do
     pod 'RxTest', '6.2.0'
   end
 
-  target 'jsearch-iosUITests' do
-    # Pods for testing
-  end
-
 end
