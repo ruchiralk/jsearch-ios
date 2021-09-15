@@ -9,11 +9,9 @@ import Foundation
 
 extension String {
     
-    func matching(regex: String) throws -> [String] {
-        
-        let regex = try NSRegularExpression(pattern: regex)
+    func matching(regex: NSRegularExpression) throws -> [String] {
         let results = regex.matches(in: self,
-                                   range: NSRange(self.startIndex..., in: self))
+                                    range: NSRange(self.startIndex..., in: self))
         return results.map{
             guard let range = Range($0.range, in: self) else {
                 return ""

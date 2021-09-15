@@ -12,6 +12,13 @@ struct TVSectionViewModel {
     let title: String
     var items: [TVItemViewModel]
     
+    private static var formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "EEEE d MMMM"
+        return formatter
+    }()
+    
     static func from(_ date: Date?, data: [FlexJob]) -> TVSectionViewModel {
         let title = formatDate(date)
         return TVSectionViewModel(title: title, items: data.map {TVItemViewModel.from($0) })
@@ -21,9 +28,7 @@ struct TVSectionViewModel {
         guard let date = date else {
             return ""
         }
-        let formatter = DateFormatter()
-         formatter.locale = Locale(identifier: "en_US_POSIX")
-         formatter.dateFormat = "EEEE d MMMM"
+        
         return formatter.string(from: date)
     }
 }

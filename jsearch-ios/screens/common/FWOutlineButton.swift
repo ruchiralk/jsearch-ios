@@ -8,7 +8,7 @@
 import UIKit
 
 class FWOutlineButton: FWButton {
-
+    
     init(frame: CGRect,
          borderColor: UIColor = .black,
          borderWidth: CGFloat = 1.0,

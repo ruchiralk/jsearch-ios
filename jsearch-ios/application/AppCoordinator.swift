@@ -8,7 +8,7 @@
 import UIKit
 
 class AppCoordinator: Coordinator {
-
+    
     var rootViewController: UIViewController {
         return navigationController
     }

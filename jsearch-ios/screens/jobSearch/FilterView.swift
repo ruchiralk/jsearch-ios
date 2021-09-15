@@ -34,13 +34,13 @@ class FilterView: UIView {
     }()
     
     private lazy var separatorView: UIView = {
-       let view = UIView()
+        let view = UIView()
         view.backgroundColor = .separator
         return view
     }()
     
     private lazy var contentView: UIStackView = {
-       let view = UIStackView(arrangedSubviews: [filterButton, separatorView, kaartButton])
+        let view = UIStackView(arrangedSubviews: [filterButton, separatorView, kaartButton])
         view.axis = .horizontal
         view.distribution = .fill
         view.alignment = .center

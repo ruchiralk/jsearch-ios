@@ -7,13 +7,12 @@
 
 import UIKit
 
-
 class NavigationCoordinator: Coordinator {
     
     let navigationController: UINavigationController
     
     let initialViewController: UIViewController?
-
+    
     init(navigationController: UINavigationController) {
         
         self.navigationController = navigationController
@@ -31,12 +30,12 @@ class NavigationCoordinator: Coordinator {
             didFinish?(self)
         }
     }
-   
+    
 }
 
+// MARK: - Navigation Control Delegate
+
 extension NavigationCoordinator: UINavigationControllerDelegate {
-    
-    // MARK: - Navigation Control Delegate
     
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         if viewController === initialViewController {

@@ -41,7 +41,7 @@ class JobSearchView: UIView {
     }()
     
     lazy var filterView: FilterView = {
-       let view = FilterView()
+        let view = FilterView()
         return view
     }()
     

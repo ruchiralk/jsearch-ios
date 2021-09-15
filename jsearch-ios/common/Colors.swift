@@ -16,7 +16,7 @@ extension UIColor {
     class var primaryOnColor: UIColor {
         return UIColor(named: "primaryOnColor")!
     }
-
+    
     class var secondary: UIColor {
         return UIColor(named: "secondary")!
     }

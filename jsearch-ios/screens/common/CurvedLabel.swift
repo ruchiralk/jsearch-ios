@@ -48,5 +48,5 @@ class CurvedLabel: UIView {
             attrStr.draw(at: CGPoint(x: 16, y: 8))
         }
     }
-
+    
 }

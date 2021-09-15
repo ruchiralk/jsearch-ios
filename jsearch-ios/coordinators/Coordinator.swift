@@ -10,15 +10,11 @@ import RxSwift
 
 class Coordinator: NSObject {
     
-    // MARK: - Properties
-    
     var didFinish: ((Coordinator) -> Void)?
     
     var childCoordinators: [Coordinator] = []
     
     let bag = DisposeBag()
-    
-    // MARK: - Methods
     
     func start() {}
     
