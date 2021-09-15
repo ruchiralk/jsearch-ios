@@ -8,6 +8,7 @@
 import UIKit
 
 extension CGFloat {
+    
     static var smallMargin: CGFloat {
         return 8.0
     }

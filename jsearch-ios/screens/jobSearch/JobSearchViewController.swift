@@ -17,7 +17,6 @@ class JobSearchViewController: UIViewController {
     private let jobSearchView: JobSearchView
     
     let datasource = RxTableViewSectionedReloadDataSource<TVSectionViewModel>(
-        
         configureCell:  { (_, tv, indexPath, element) in
             let cell = tv.dequeueReusableCell(withIdentifier: FlexJobTableViewCell.identifier) as! FlexJobTableViewCell
             cell.updateHeroImage(element.heroImageUrl)
@@ -94,8 +93,9 @@ class JobSearchViewController: UIViewController {
                 }
                 NotificationBanner(title: NSLocalizedString("Errpr", comment: "error"),
                                    subtitle: error.localizedDescription,
-                                   style: .danger)
-                    .show()
+                                   style: .danger
+                )
+                .show()
             })
             .disposed(by: bag)
     }
@@ -108,7 +108,7 @@ extension JobSearchViewController: UITableViewDelegate {
     private func configureTableView() {
         jobSearchView.tableView.register(FlexJobTableViewCell.self,
                                          forCellReuseIdentifier: FlexJobTableViewCell.identifier)
-        jobSearchView.tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "header")
+        jobSearchView.tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: UITableViewHeaderFooterView.identifier)
         
         jobSearchView.tableView.rx
             .setDelegate(self)
@@ -156,7 +156,7 @@ extension JobSearchViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view =  tableView.dequeueReusableHeaderFooterView(withIdentifier: "header")
+        let view =  tableView.dequeueReusableHeaderFooterView(withIdentifier:  UITableViewHeaderFooterView.identifier)
         
         var backgroundConfig = UIBackgroundConfiguration.listPlainHeaderFooter()
         backgroundConfig.backgroundColor = .systemBackground

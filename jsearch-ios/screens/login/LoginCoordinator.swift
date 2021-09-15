@@ -12,7 +12,6 @@ class LoginCoordinator: PresentingCoordinator {
     
     override func start() {
         let viewModel = LoginViewModel()
-        
         viewModel.onClose.subscribe { [weak self] _ in
             self?.finish(true)
         }.disposed(by: bag)

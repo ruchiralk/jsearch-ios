@@ -7,6 +7,7 @@
 
 import UIKit
 
+// Supports UINavigationController based navigation
 class NavigationCoordinator: Coordinator {
     
     let navigationController: UINavigationController

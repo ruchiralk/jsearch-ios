@@ -22,6 +22,8 @@ struct TVItemViewModel {
         return formatter
     }()
     
+    // API returns startTime and endTime in muliple format
+    // Using this regex instead of DateFormatters to simplyfy time extraction
     private static let timeExtractionRegex: NSRegularExpression? = {
         try? NSRegularExpression(pattern: "((?:[01]\\d|2[0-3]):[0-5]\\d)")
     }()
@@ -45,6 +47,7 @@ struct TVItemViewModel {
         return "\(extractTime(dateTimeStr: start)) - \(extractTime(dateTimeStr: end))"
     }
     
+    // Extract time from any datetime string
     static func extractTime(dateTimeStr: String) -> String {
         guard let regex = timeExtractionRegex else {
             return ""

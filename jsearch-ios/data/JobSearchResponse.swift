@@ -7,6 +7,7 @@
 
 import Foundation
 
+// API result wrapper for jobSearch
 struct JobSearchResponse: Codable {
     let data: [Shift]?
 }

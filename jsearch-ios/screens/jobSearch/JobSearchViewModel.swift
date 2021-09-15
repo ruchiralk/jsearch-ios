@@ -13,7 +13,7 @@ public class JobSearchViewModel {
     
     static let serverDateFormat = "yyyy-MM-dd"
     
-   private enum TableViewAction {
+    private enum TableViewAction {
         case startOver
         case nextPage
     }
@@ -29,7 +29,9 @@ public class JobSearchViewModel {
     
     // input
     
+    // launch login screen
     let login = PublishSubject<Void>()
+    // launch register screen
     let register = PublishSubject<Void>()
     
     let loadMore = PublishSubject<Void>()
@@ -97,6 +99,7 @@ public class JobSearchViewModel {
                 let (action, key) = args
                 return self.flexJobRepository
                     .fetchJobs(key: key!)
+                    // stop observable chain from disposing on server errors
                     .catch({ [weak self] error in
                         self?._error.onNext(error)
                         return Observable.just(nil)
@@ -118,12 +121,13 @@ public class JobSearchViewModel {
                     let arr = (self?.data.value ?? []) + [result]
                     self?.data.accept(arr)
                 }
-            } onError: { error in
-                print("server error: \(error)")
+            } onError: { [weak self] error in
+                self?._error.onNext(error)
             }
             .disposed(by: bag)
     }
     
+    // return next paging key based on last page in datasource
     func nextPagingKey() -> String {
         guard let lastKey = data.value.last?.key else {
             return startingPagingKey()
@@ -133,6 +137,7 @@ public class JobSearchViewModel {
         return dateFormatter.string(from: nextDate)
     }
     
+    // return paging key for current date
     func startingPagingKey() -> String {
         dateFormatter.string(from: Date.current)
     }

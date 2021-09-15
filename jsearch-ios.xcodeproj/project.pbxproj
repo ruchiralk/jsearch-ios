@@ -12,11 +12,13 @@
 		BA02BC5B26F2702400FCA184 /* FakeFlexJobRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02BC5A26F2702400FCA184 /* FakeFlexJobRepository.swift */; };
 		BA02BC5D26F280BB00FCA184 /* Date+current.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02BC5C26F280BB00FCA184 /* Date+current.swift */; };
 		BA02BC5F26F283E500FCA184 /* Date+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02BC5E26F283E500FCA184 /* Date+mock.swift */; };
+		BA02BC6126F2A91900FCA184 /* TemperAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02BC6026F2A91900FCA184 /* TemperAPIService.swift */; };
+		BA02BC6326F2AAB700FCA184 /* UITableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02BC6226F2AAB700FCA184 /* UITableViewHeaderFooterView.swift */; };
 		BA597D7026F0DFDA00CB1E2E /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA597D6F26F0DFDA00CB1E2E /* APIError.swift */; };
 		BA597D7226F0E31100CB1E2E /* FlexJobsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA597D7126F0E31100CB1E2E /* FlexJobsDataSource.swift */; };
 		BA597D7426F0E36200CB1E2E /* FlexJobsRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA597D7326F0E36200CB1E2E /* FlexJobsRemoteDataSource.swift */; };
 		BA597D7626F0E4C700CB1E2E /* String+UrlEncode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA597D7526F0E4C700CB1E2E /* String+UrlEncode.swift */; };
-		BA597D7826F0E8D800CB1E2E /* TemperAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA597D7726F0E8D800CB1E2E /* TemperAPIService.swift */; };
+		BA597D7826F0E8D800CB1E2E /* TemperDefaultAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA597D7726F0E8D800CB1E2E /* TemperDefaultAPIService.swift */; };
 		BA597D7A26F0EDB400CB1E2E /* FlexJobResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA597D7926F0EDB400CB1E2E /* FlexJobResult.swift */; };
 		BA597D7C26F0EDD500CB1E2E /* Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA597D7B26F0EDD500CB1E2E /* Shift.swift */; };
 		BA597D7E26F0EE9500CB1E2E /* FlexJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA597D7D26F0EE9500CB1E2E /* FlexJob.swift */; };
@@ -80,11 +82,13 @@
 		BA02BC5A26F2702400FCA184 /* FakeFlexJobRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeFlexJobRepository.swift; sourceTree = "<group>"; };
 		BA02BC5C26F280BB00FCA184 /* Date+current.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+current.swift"; sourceTree = "<group>"; };
 		BA02BC5E26F283E500FCA184 /* Date+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+mock.swift"; sourceTree = "<group>"; };
+		BA02BC6026F2A91900FCA184 /* TemperAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperAPIService.swift; sourceTree = "<group>"; };
+		BA02BC6226F2AAB700FCA184 /* UITableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		BA597D6F26F0DFDA00CB1E2E /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		BA597D7126F0E31100CB1E2E /* FlexJobsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexJobsDataSource.swift; sourceTree = "<group>"; };
 		BA597D7326F0E36200CB1E2E /* FlexJobsRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexJobsRemoteDataSource.swift; sourceTree = "<group>"; };
 		BA597D7526F0E4C700CB1E2E /* String+UrlEncode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+UrlEncode.swift"; sourceTree = "<group>"; };
-		BA597D7726F0E8D800CB1E2E /* TemperAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperAPIService.swift; sourceTree = "<group>"; };
+		BA597D7726F0E8D800CB1E2E /* TemperDefaultAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperDefaultAPIService.swift; sourceTree = "<group>"; };
 		BA597D7926F0EDB400CB1E2E /* FlexJobResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexJobResult.swift; sourceTree = "<group>"; };
 		BA597D7B26F0EDD500CB1E2E /* Shift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shift.swift; sourceTree = "<group>"; };
 		BA597D7D26F0EE9500CB1E2E /* FlexJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexJob.swift; sourceTree = "<group>"; };
@@ -182,7 +186,8 @@
 				BA597D7526F0E4C700CB1E2E /* String+UrlEncode.swift */,
 				BA597D6F26F0DFDA00CB1E2E /* APIError.swift */,
 				BADA2C7526F08E970024D36D /* APIClient.swift */,
-				BA597D7726F0E8D800CB1E2E /* TemperAPIService.swift */,
+				BA02BC6026F2A91900FCA184 /* TemperAPIService.swift */,
+				BA597D7726F0E8D800CB1E2E /* TemperDefaultAPIService.swift */,
 			);
 			path = network;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 				BA597D8826F1087C00CB1E2E /* UIScrollView+LoadMore.swift */,
 				BA597D9926F1550400CB1E2E /* CurvedLabel.swift */,
 				BA597D9B26F157C600CB1E2E /* TableViewCell.swift */,
+				BA02BC6226F2AAB700FCA184 /* UITableViewHeaderFooterView.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -541,6 +547,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA597D9E26F1734B00CB1E2E /* FilterView.swift in Sources */,
+				BA02BC6326F2AAB700FCA184 /* UITableViewHeaderFooterView.swift in Sources */,
 				BA597D8326F100B800CB1E2E /* FWButton.swift in Sources */,
 				BA597D9626F126D600CB1E2E /* String+Regex.swift in Sources */,
 				BA597D7626F0E4C700CB1E2E /* String+UrlEncode.swift in Sources */,
@@ -564,7 +571,8 @@
 				BADA2C5C26EFF5130024D36D /* NavigationCoordinator.swift in Sources */,
 				BA597D9C26F157C600CB1E2E /* TableViewCell.swift in Sources */,
 				BA597D7A26F0EDB400CB1E2E /* FlexJobResult.swift in Sources */,
-				BA597D7826F0E8D800CB1E2E /* TemperAPIService.swift in Sources */,
+				BA597D7826F0E8D800CB1E2E /* TemperDefaultAPIService.swift in Sources */,
+				BA02BC6126F2A91900FCA184 /* TemperAPIService.swift in Sources */,
 				BADA2C6026EFF83E0024D36D /* JobSearchViewModel.swift in Sources */,
 				BADA2C4E26EFD8FA0024D36D /* JobSearchCoordinator.swift in Sources */,
 				BA597D8D26F11EB900CB1E2E /* FlexJobRepository.swift in Sources */,

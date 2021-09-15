@@ -29,7 +29,6 @@ class CurvedLabel: UIView {
         let width = self.bounds.width
         
         let path = UIBezierPath()
-        // start from bottom
         path.move(to: CGPoint(x: 0, y: height))
         path.addLine(to: CGPoint(x: width, y: height))
         path.addLine(to: CGPoint(x: width, y: 0))
@@ -43,8 +42,10 @@ class CurvedLabel: UIView {
         path.fill()
         
         if let text = self.text {
-            let attrStr = NSAttributedString(string: text, attributes: [
-                                                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .bold)])
+            let attrStr = NSAttributedString(string: text,
+                                             attributes: [
+                                                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .bold)
+                                             ])
             attrStr.draw(at: CGPoint(x: 16, y: 8))
         }
     }

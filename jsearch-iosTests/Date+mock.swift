@@ -8,6 +8,7 @@
 import Foundation
 @testable import jsearch_ios
 
+// Mock current date to simplify testing
 extension Date {
     
     // 1 January 2001

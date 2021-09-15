@@ -7,6 +7,8 @@
 
 import UIKit
 
+// This Coordinator supports modal presentation
+// Child coordinators expecting to do modal presentation should inherit from this
 class PresentingCoordinator: Coordinator {
     
     let presentingViewController: UIViewController
